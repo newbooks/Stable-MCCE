@@ -11,6 +11,7 @@ VDW_ELIMIT_NEAR = 999
 VDW_CUTOFF_FAR = 10
 VDW_ELIMIT_FAR = 0
 
+
 cutoff_near2 = VDW_CUTOFF_NEAR * VDW_CUTOFF_NEAR
 cutoff_far2 = VDW_CUTOFF_FAR  * VDW_CUTOFF_FAR
 
@@ -33,7 +34,7 @@ class VDWPARM:
                         Ctype = fields[1]
                         pair = fields[2]
                         if (Ctype, pair) in self.vdwparam:
-                            print "WARNING: %s of %s entry duplicates detected." % (Ctype, pair)
+                            print("WARNING: %s of %s entry duplicates detected." % (Ctype, pair))
                         self.vdwparam[(Ctype, pair)] = float(fields[3])
                     elif fields[0] == "SCALING":
                         Vtype = fields[1]
@@ -108,7 +109,7 @@ def vdw(atom1, atom2):
             mark = "*"
         else:
             mark = ""
-        print "Atom %s <-> %s: %.3f  (d = %.3f) %s" % (atom1.atomID, atom2.atomID, e, d, mark)
+        print("Atom %s <-> %s: %.3f  (d = %.3f) %s" % (atom1.atomID, atom2.atomID, e, d, mark))
 
     return e
 
@@ -132,5 +133,5 @@ def vdw_conf(conf1, conf2):
 
 if __name__ == "__main__":
     initdb()
-    print vdwdb.vdwparam
+    print(vdwdb.vdwparam)
     #print vdwdb.scaling
