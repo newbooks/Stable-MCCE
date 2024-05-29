@@ -555,6 +555,14 @@ class CONFORMER_param:
             self.param[key] = value
 
 
+class TORSION_param:
+    """
+    Torsion parameter
+    """
+    def __init__(self, value_str) -> None:
+        pass
+        
+
 class ENV:
     def __init__(self):
         self.runprm = {}
